@@ -1,0 +1,101 @@
+= Ranger File Manager Configuration for Linux Workstations
+:toc: left
+:toclevels: 2
+:author: R0tt3nT0m4t0
+:email: jumedina@redhat.com
+:sectnums:
+
+A comprehensive configuration set for the Ranger terminal file manager, optimized for productivity and ease of use on Linux workstations.
+
+== Features
+
+* **Productivity Commands:** Includes the custom `:touchng` command for simultaneously creating nested directories and files.
+* **Quality of Life:** Enhanced visual configuration with borders, image preview, and a curated color scheme.
+* **Efficient Mappings:** Custom keybindings for quick directory navigation, file creation, and deletion (via a trash bin).
+
+== Installation
+
+These steps ensure Ranger is installed and configured with all custom settings.
+
+. Prerequisite Installation
++
+First, install the Ranger file manager and the Git version control system. This example uses `dnf` for Fedora/RHEL-based systems.
++
+[source,shell]
+----
+$ sudo dnf install -y ranger git
+----
+
+== Configuration
+
+. Clone this repository to access the configuration files:
++
+[source,shell]
+----
+$ git clone https://github.com/R0tt3nT0m4t0/ranger-configuration.git ranger-config-temp
+----
+
+. Copy the custom configuration folder to your local `$HOME/.config` directory. This includes `rc.conf`, `commands.py`, and `colorschemes`.
++
+[source,shell]
+----
+$ cp -r ranger-config-temp/ranger ~/.config/
+----
+
+. Copy the `ranger.desktop` file to your local applications directory for easy access via your desktop environment's application launcher:
++
+[source,shell]
+----
+$ cp ranger-config-temp/ranger.desktop ~/.local/share/applications/
+$ update-desktop-database ~/.local/share/applications/
+----
+
+. Configure Keyboard Shortcut (GNOME). This configuration sets the shortcut to kbd:[Super+E]
++
+[source,shell]
+----
+$ bash shortcut-set.sh
+----
+
+. Clean Up
++
+[source,shell]
+----
+$ rm -rf ranger-config-temp
+----
+
+== Custom Commands
+
+The `:touchng` Command (touch and mkdir -p)
+
+This command enhances the file creation process by combining `mkdir -p` and `touch`.
+
+Usage:
+
+Enter the command prompt (`:`) and execute:
+
+[source,console]
+----
+:touchng my/new/path/test.txt
+----
+
+This action will:
+
+* Recursively create the directory structure (`my/new/path`) if it does not exist.
+* Create the target file (`test.txt`) inside the path.
+
+== Key Mappings
+
+The custom key mappings are prefixed by the comma key (`,`) for command execution and the `g` key for navigation.
+
+[%header,cols="^1,2,3",align=center,stripes=even,width=80%]
+|===
+| Key  | Command          | Description
+| `,d` | `mkdir`          | Create a new directory.
+| `,f` | `touch`          | Create a new, empty file.
+| `,t` | `touchng`        | Create a new file, recursively creating parent directories.
+| `gh` | `cd ~`           | Go Home.
+| `gD` | `cd ~/Downloads` | Go to Downloads.
+| `gr` | `cd ~/repos`     | Go to Repositories.
+| `gP` | `cd ~/Projects`  | Go to Projects.
+|===
