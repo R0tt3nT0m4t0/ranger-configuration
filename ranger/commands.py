@@ -41,4 +41,3 @@ class touchng(Command):
                     self.fm.notify(f"Created file: {path}", bad=False)
                 except Exception as e:
                     self.fm.notify(f"Error touching file {path}: {e}", bad=True)
-
