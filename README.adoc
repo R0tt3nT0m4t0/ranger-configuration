@@ -50,13 +50,6 @@ $ cp ranger-config-temp/ranger.desktop ~/.local/share/applications/
 $ update-desktop-database ~/.local/share/applications/
 ----
 
-. Configure Keyboard Shortcut (GNOME). This configuration sets the shortcut to kbd:[Super+E]
-+
-[source,shell]
-----
-$ bash shortcut-set.sh
-----
-
 . Clean Up
 +
 [source,shell]
