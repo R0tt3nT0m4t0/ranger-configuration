@@ -1,6 +1,11 @@
-from ranger.api.commands import Command
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
 import os
-import re
+# import re
+from ranger.api.commands import Command
 
 class touchng(Command):
     """
