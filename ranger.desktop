@@ -4,7 +4,7 @@ Name=ranger
 Comment=Launches the ranger file manager
 Icon=utilities-terminal
 Terminal=false
-Exec=/usr/bin/gnome-terminal -- /usr/bin/ranger
+Exec=/usr/bin/gnome-terminal --title="Ranger File Manager" --maximize -- /usr/bin/ranger
 Categories=ConsoleOnly;System;FileTools;FileManager
 MimeType=inode/directory;
 Keywords=File;Manager;Browser;Explorer;Launcher;Vi;Vim;Python

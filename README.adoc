@@ -50,6 +50,15 @@ $ cp ranger-config-temp/ranger.desktop ~/.local/share/applications/
 $ update-desktop-database ~/.local/share/applications/
 ----
 
+. Highly recommended to create a keyboard shortcut:
++
+[source,yaml]
+----
+Name: Ranger File Manager
+Command: gnome-terminal --title="Ranger File Manager" --maximize -- /usr/bin/ranger
+Shortcut: Super + E
+----
+
 . Clean Up
 +
 [source,shell]
